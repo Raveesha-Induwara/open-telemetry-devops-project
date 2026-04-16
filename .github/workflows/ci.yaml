@@ -3,9 +3,9 @@
 name: product-catalog-ci
 
 on: 
-    push:
+    pull_request:
         branches:
-        - raveesha
+        - main-raveesha
 
 jobs:
     build:
@@ -98,7 +98,7 @@ jobs:
             git config --global user.name "Raveesha-Induwara"
             git add kubernetes/productcatalog/deploy.yaml
             git commit -m "[CI]: Update product catalog image tag"
-            git push
+            git push origin HEAD:main-raveesha -f
 
         
         
